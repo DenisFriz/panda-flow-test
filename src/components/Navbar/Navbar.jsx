@@ -257,16 +257,16 @@ export default function Navbar() {
               <a href="/#faq" className="nav-link-main tablet-show w-nav-link">
                 faq's
               </a>
-            </div>
 
-            <a
-              href="https://concierge.bliss.me/"
-              className="nav-link-main ml32 w-nav-link"
-              target="_blank"
-              rel="noreferrer"
-            >
-              bliss ai
-            </a>
+              <a
+                href="https://concierge.bliss.me/"
+                className="nav-link-main ml32 w-nav-link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                bliss ai
+              </a>
+            </div>
           </div>
 
           <div className="navbar8_menu-right">
