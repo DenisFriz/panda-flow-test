@@ -1,0 +1,26 @@
+.heading-wrapper h2 {
+  font-size: 38px;
+  line-height: 110%;
+  font-weight: 500;
+  color: #555;
+  font-family:
+    Articulat WOFF2,
+    Arial,
+    sans-serif;
+}
+
+.bliss {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.bliss-card-label {
+  color: #555;
+}
+
+@media screen and (max-width: 991px) {
+  .bliss {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}

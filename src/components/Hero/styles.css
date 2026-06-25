@@ -1,0 +1,52 @@
+/* Supplemental: only the small arrow bounce Webflow's JS animated.
+   Everything else comes from the linked Webflow stylesheet. */
+
+/* stack the section so the START button sits centered under "Find your"
+   (Webflow's .section_hero-hp is display:flex with no direction → row) */
+.section_hero-hp {
+  margin-top: 86px;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 991px) {
+  .section_hero-hp {
+    margin-top: 70px;
+  }
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1.09;
+}
+
+.hero-bar-title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+/* the arrow is display:none on desktop and shown (7×13) under 479px via Webflow CSS */
+@media screen and (max-width: 479px) {
+  .section_hero-hp .hero-arrow {
+    animation: hero-arrow-bounce 1.2s ease-in-out infinite;
+    will-change: transform;
+  }
+}
+
+@keyframes hero-arrow-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section_hero-hp .hero-arrow {
+    animation: none;
+  }
+}

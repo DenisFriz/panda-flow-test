@@ -1,0 +1,14 @@
+.timeline-text-wrapper h3 {
+  color: #555;
+  font-weight: 500;
+}
+
+.word-slide {
+  gap: 0.2em;
+}
+
+@media screen and (max-width: 479px) {
+  .heading-wrapper h2 {
+    font-size: 24px;
+  }
+}

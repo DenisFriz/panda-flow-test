@@ -1,0 +1,34 @@
+/* Supplemental: `word-slide`/`word-wrapper` are Webflow runtime text-split classes (not in the
+   CDN sheet). Make the word spans inline-block so the GSAP y-transform on the heading applies. */
+.section_video-slider .word-slide .word-wrapper {
+  display: inline-block;
+}
+
+/* keep the carousel visible — Webflow has a breakpoint rule `.top-64{display:none}` */
+.section_video-slider .swiper-video.top-64 {
+  display: block;
+}
+
+.testimonials-text {
+  color: #555;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.word-slide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4em;
+  color: #555;
+  font-family: 'Articulat WOFF2', Arial, sans-serif;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section_video-slider .word-wrapper {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

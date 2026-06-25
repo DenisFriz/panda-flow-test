@@ -1,0 +1,163 @@
+/* Supplemental navbar styles: only the bits Webflow's runtime JS normally applies.
+   Everything else comes from the linked Webflow stylesheet. Scoped to the navbar. */
+
+/* fixed bar on top of the page (Webflow positions via .navbar8_component already) */
+.navbar8_component {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.menu-icon1_line-top,
+.menu-icon1_line-middle,
+.menu-icon1_line-bottom {
+  background-color: #555;
+}
+
+.w-nav-link,
+.w-dropdown-toggle,
+.btn-txt {
+  font-family: 'Articulat WOFF2', Arial, sans-serif;
+}
+
+/* chevron rotates when the EDUCATION dropdown is open */
+.navbar8_component .navbar8_menu-dropdown.w--open .nav-chevron {
+  transform: rotate(180deg);
+}
+.navbar8_component .nav-chevron {
+  transition: transform 0.25s ease;
+}
+
+/* animate the hamburger into an X when the mobile menu is open */
+.navbar8_component .menu-icon1_line-top,
+.navbar8_component .menu-icon1_line-bottom,
+.navbar8_component .menu-icon1_line-middle {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+.navbar8_component .navbar8_menu-button.w--open .menu-icon1_line-top {
+  transform: translateY(4px) rotate(45deg);
+}
+.navbar8_component .navbar8_menu-button.w--open .menu-icon1_line-bottom {
+  transform: translateY(-4px) rotate(-45deg);
+}
+.navbar8_component .navbar8_menu-button.w--open .menu-icon1_line-middle {
+  opacity: 0;
+}
+
+/* ── Desktop (>=992px): hamburger/overlay hidden, full menu shown ── */
+@media screen and (min-width: 992px) {
+  .navbar8_component .navbar8_menu-button,
+  .navbar8_component .nav-overlay {
+    display: none;
+  }
+  .navbar8_component .tablet-show,
+  .navbar8_component .nav-desktop-hide {
+    display: none;
+  }
+
+  /* let the menu group span the bar so the CTA can sit in the right corner */
+  .navbar8_component .navbar8_menu-left.regular {
+    flex: 1 1 auto;
+    width: 100%;
+    align-items: center;
+  }
+  /* pin the menu-right group ("Qualify now") to the far-right corner */
+  .navbar8_component .navbar8_menu-right {
+    margin-left: auto;
+  }
+}
+
+/* ── Tablet / mobile (<=991px): Webflow collapses the menu; we reveal it ── */
+@media screen and (max-width: 991px) {
+  .navbar8_component .navbar8_menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* the collapsed menu becomes a slide-in panel when opened */
+  .navbar8_component .navbar8_menu.w-nav-menu {
+    display: block;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bone-light, #f5f5ef);
+    padding: 28px 5% 48px;
+    overflow-y: auto;
+    transform: translateY(-120%);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 60;
+  }
+  .navbar8_component .navbar8_menu.w-nav-menu.w--open {
+    transform: none;
+    max-height: 90vh;
+  }
+
+  /* stack the items in the mobile panel */
+  .navbar8_component .navbar8_menu-left.regular,
+  .navbar8_component .navbar8_menu-left {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 4px;
+  }
+  .navbar8_component .navbar8_menu-left .nav-link-main,
+  .navbar8_component .nav-link-main.ml32 {
+    margin: 0;
+    padding: 14px 0;
+    font-size: 20px;
+    width: 100%;
+  }
+  .navbar8_component .navbar8_menu-dropdown.w-dropdown {
+    width: 100%;
+  }
+
+  /* call-us link: keep icon + number on one centered line */
+  .navbar8_component .navbar8_menu-right .nav-link-main.nav-desktop-hide {
+    align-items: center;
+    white-space: nowrap;
+  }
+  .navbar8_component .call-us-icon {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+  }
+
+  /* dropdown list flows inline (not absolute) inside the mobile panel */
+  .navbar8_component .navbar8_dropdown-list.w--open {
+    position: static;
+    width: 100%;
+    padding: 8px 0 16px;
+    background: transparent;
+    border: none;
+  }
+  .navbar8_component .navbar_container-inner {
+    min-height: auto;
+    display: block;
+  }
+  .navbar8_component .nav-col-wrapper {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  /* dim the page behind the open panel */
+  .navbar8_component .nav-overlay {
+    position: fixed;
+    inset: 85px 0 0 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 50;
+  }
+
+  .navbar8_component .navbar8_menu-left .nav-link-main,
+  .navbar8_component .nav-link-main.ml32 {
+    margin: 0;
+    padding: 24px 0;
+    font-size: 16px;
+    width: 100%;
+  }
+}

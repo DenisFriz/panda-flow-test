@@ -1,0 +1,53 @@
+/* ── Bliss Aesthetics — design tokens (extracted from original Webflow CSS) ── */
+
+/* Custom fonts downloaded from the original site */
+@font-face {
+  font-family: 'Articulat CF';
+  src: url('/fonts/6818d966e379ce45c3b61d0d_Articulat_CF_Regular.woff2')
+    format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Loretta';
+  src: url('/fonts/6818d99a13ddd06db366643d_loretta-medium.woff2')
+    format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Brand palette (from original :root) */
+  --purple: #ad4adf;
+  --purple-main: #a586f8; /* primary lavender accent */
+  --purple-light: #e0d5fd;
+  --purple-lighter: #f2edfe;
+  --mint: #dfe9cf;
+  --bone-light: #f5f5ef;
+  --bone: #ece7de;
+  --grey: #c4c4c4;
+  --grey-mid: #555;
+  --black: #131214;
+  --white: #fff;
+
+  /* Fonts */
+  --font-body: 'Articulat WOFF2', Arial, sans-serif;
+  --font-display: 'Articulat CF', 'Montserrat', system-ui, sans-serif;
+  --font-serif: 'Loretta', 'Fraunces', Georgia, serif;
+
+  /* Spacing scale (matches Webflow's large vertical rhythm) */
+  --section-pad: 120px;
+  --section-pad-tablet: 80px;
+  --section-pad-mobile: 56px;
+  --container: 1200px;
+  --gutter: 24px;
+  --radius: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-y: 40px;
+}
