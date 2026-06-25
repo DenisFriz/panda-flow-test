@@ -1,5 +1,5 @@
 // Centralized asset paths (files live in /public/assets, served from /assets).
-const A = '/assets';
+const A = './assets';
 
 export const assets = {
   logo: `${A}/681a2ee6b58085699e9b915e_logo.svg`,
